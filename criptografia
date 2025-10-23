@@ -1,0 +1,43 @@
+def trocar_vogais(texto_original):
+    """
+    Substitui as vogais (maiúsculas e minúsculas) em um texto
+    pelos símbolos definidos: A/a=!, E/e=@, I/i=#, O/o=$, U/u=%.
+    """
+
+    # Mapeamento das vogais para os símbolos
+    # Dicionário que armazena todas as substituições a serem feitas.
+    mapeamento_vogais = {
+        'A': '!', 'a': '!',
+        'E': '@', 'e': '@',
+        'I': '#', 'i': '#',
+        'O': '$', 'o': '$',
+        'U': '%', 'u': '%'
+    }
+
+    # Inicializa o texto a ser modificado com o texto original
+    texto_modificado = texto_original
+
+    # Percorre o dicionário para realizar todas as substituições
+    for vogal, simbolo in mapeamento_vogais.items():
+        # Usa o método replace() para trocar a vogal pelo símbolo no texto
+        texto_modificado = texto_modificado.replace(vogal, simbolo)
+
+    # Retorna o texto com as vogais trocadas
+    return texto_modificado
+
+# --- Bloco Principal de Execução ---
+
+print("--- Trocador de Vogais por Símbolos ---")
+
+# 1. Solicita a entrada do utilizador
+texto_inserido = input("Por favor, digite o texto que deseja modificar: ")
+
+# 2. Chama a função para processar o texto
+resultado_final = trocar_vogais(texto_inserido)
+
+# 3. Apresenta o resultado
+print("\n-------------------------")
+print(f"Texto Original: {texto_inserido}")
+print(f"Texto Modificado: {resultado_final}")
+print("-------------------------") 
+
